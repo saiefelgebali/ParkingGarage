@@ -1,4 +1,5 @@
 ﻿using Core;
+using Core.Vehicles;
 
 var garage = new Garage(new Floor[]
 {
@@ -16,4 +17,12 @@ var garage = new Garage(new Floor[]
     }),
 });
 
-Console.WriteLine("");
+var myCar = new Car("123456");
+var myVan = new Van("123456");
+var myMotorbike = new Motorbike("123456");
+
+garage.GetFirstAvailableParkingSpace(myMotorbike)?.ParkVehicle(myMotorbike);
+garage.GetFirstAvailableParkingSpace(myVan)?.ParkVehicle(myVan);
+garage.GetFirstAvailableParkingSpace(myCar)?.ParkVehicle(myCar);
+
+Console.WriteLine();
